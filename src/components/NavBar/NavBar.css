@@ -1,0 +1,17 @@
+
+.navbar a {
+    text-decoration: none;
+    color: black;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 4vmin;
+    background-color: aliceblue;
+}
+
+.navbar li {
+    display: inline;
+    padding: 2vmin 10vmin;
+}
