@@ -1,17 +1,33 @@
 
-.navbar a {
-    text-decoration: none;
-    color: black;
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.navbar {
+    background-color: white;
+    border-bottom: solid 2px black;
 }
 
 .navbar ul {
     list-style: none;
-    margin: 0;
-    padding: 4vmin;
-    background-color: aliceblue;
+    display: flex;
 }
 
 .navbar li {
-    display: inline;
-    padding: 2vmin 10vmin;
+    padding: 3vmin;
 }
+
+.navbar a {
+    color: black;
+    text-decoration: none;
+}
+
+.navbar-user {
+    margin-top: -8vmin;
+    margin-right: 3vmin;
+    float: right;
+}
+
+  
