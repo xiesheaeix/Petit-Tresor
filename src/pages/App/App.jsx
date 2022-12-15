@@ -6,6 +6,7 @@ import AuthPage from '../AuthPage/AuthPage';
 import HomePage from '../HomePage/HomePage';
 import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
 import NavBar from '../../components/NavBar/NavBar';
+import Footer from '../../components/Footer/Footer';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -21,6 +22,7 @@ export default function App() {
               <Route path="/orders" element={<OrderHistoryPage />} />
               <Route path="/*" element={<Navigate to="/orders/new" />} />
             </Routes>
+            <Footer />
           </>
           :
           <AuthPage setUser={setUser} />

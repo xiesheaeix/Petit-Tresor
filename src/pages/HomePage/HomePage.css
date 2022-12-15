@@ -1,0 +1,9 @@
+  .HomePage aside {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 23vmin 2vmin;
+    background-color: aliceblue;
+  }

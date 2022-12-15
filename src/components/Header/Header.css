@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300&display=swap");
+
+main {
+  font-family: "Lato", "Avenir Next", Arial, sans-serif;
+  margin: 0;
+  width: 100vw;
+}
+
+.header {
+  font-family: "Cinzel", serif;
+  width: 100%;
+  background: tan;
+  text-align: center;
+  color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+video {
+  position: absolute;
+  margin-top: 0vmin;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80vmin;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+}
+
+.overlay {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.overlay h1 {
+  background: #000 none repeat scroll 0 0;
+  color: tan;
+  font-size: 10vmin;
+  margin: -18rem 3rem 0;
+  mix-blend-mode: overlay;
+  border-radius: 10vmin;
+  padding: 1vmin 5vmin;
+}
+
+.company-mission {
+  font-family: "Frank Ruhl Libre", serif;
+  letter-spacing: 4px;
+  padding: 20vmin;
+  margin: -30vmin auto;
+}
