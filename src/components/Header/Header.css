@@ -42,6 +42,7 @@ video {
   -ms-flex-pack: center;
   justify-content: center;
 }
+
 .overlay h1 {
   background: #000 none repeat scroll 0 0;
   color: tan;
@@ -57,4 +58,18 @@ video {
   letter-spacing: 4px;
   padding: 20vmin;
   margin: -30vmin auto;
+}
+
+
+
+@media screen and (max-width: 480px) {
+  .overlay h1 {
+    font-size: 8vmin;
+    margin: -38rem 3rem 0;
+  }
+
+  .company-mission {
+    padding: 10vmin;
+    margin-top: -37rem;
+  }
 }

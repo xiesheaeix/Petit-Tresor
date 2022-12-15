@@ -4,9 +4,17 @@
     width: 100%;
     row-gap: 10vmin;
     column-gap: 10vmin;
-    margin: 0 auto 10vmin;
+    margin: 10vmin auto 10vmin;
     justify-content: center;
     align-items: center;
     margin-bottom: 5vmin;
   }
   
+
+  @media screen and (max-width: 480px) {
+    .ProductList {
+      grid-template-columns: repeat(3, 20vw);
+      font-size: 3vmin;
+    }
+
+  }

@@ -23,4 +23,17 @@
     margin: 2vmin auto;
     text-align: center;
   }
-  
+
+
+  @media screen and (max-width: 480px) {
+    .product-item-card {
+      height: 10vh;
+      margin-bottom: 10vmin;
+    }
+
+    .item-img {
+      height: 10vh;
+      width: 10vh;
+      border-radius: 6px;
+    }
+  }
