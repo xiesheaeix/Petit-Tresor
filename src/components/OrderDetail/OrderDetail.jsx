@@ -1,8 +1,11 @@
 import './OrderDetail.css';
 import LineItem from '../LineItem/LineItem';
+import { useNavigate } from 'react-router-dom';
 
-// Used to display the details of any order, including the cart (unpaid order)
+
 export default function OrderDetail({ order, handleChangeQty, handleCheckout }) {
+    const navigate = useNavigate();
+
   if (!order) return null;
 
   const lineItems = order.lineItems.map(item =>
@@ -38,7 +41,7 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
                 :
                 <button
                   className="btn-sm"
-                  onClick={handleCheckout}
+                  onClick={() => navigate('/cart/checkout')}
                   disabled={!lineItems.length}
                 >CHECKOUT</button>
               }

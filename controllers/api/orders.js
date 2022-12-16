@@ -10,6 +10,7 @@ module.exports = {
 
 async function getAllForUser(req, res) {
   const orders = await Order.find({user: req.user._id, isPaid: true}).sort('-updatedAt');
+  console.log(orders);
   res.json(orders);
 }
 
@@ -35,8 +36,16 @@ async function setItemQtyInCart(req, res) {
 
 // Update the cart's isPaid property to true
 async function checkout(req, res) {
-  const cart = await Order.getCart(req.user._id);
-  cart.isPaid = true;
-  await cart.save();
-  res.json(cart);
+  try {
+    console.log(req.body)
+    const cart = await Order.getCart(req.user._id);
+    cart.isPaid = true;
+    cart.shipment = req.body;
+    await cart.save();
+    const newCart = await Order.getCart(req.user._id);
+    res.json(newCart);
+  } catch(e) {
+    console.log(e)
+    res.status(500).json(e);
+  }
 }

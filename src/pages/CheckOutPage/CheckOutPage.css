@@ -1,0 +1,21 @@
+h1 {
+    margin-top: 5vmin;
+}
+
+.checkout-page {
+    display: flex;
+    margin-top: 6vmin;
+    margin-left: 8vmin;
+}
+
+.checkout-page h1 {
+    align-content: center;
+}
+
+.checkout-items {
+    width: 30%;
+    padding-left: 15px;
+    margin-left: 15px;
+    float: right;
+    font-style: italic;
+}

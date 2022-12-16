@@ -10,6 +10,7 @@ import ProductDetailPage from '../ProductDetailPage/ProductDetailPage';
 import OrderDetail from '../../components/OrderDetail/OrderDetail';
 import { getUser } from '../../utilities/users-service';
 import './App.css';
+import CheckOutPage from '../CheckOutPage/CheckOutPage';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -26,7 +27,6 @@ export default function App() {
   }, []);
 
   async function handleAddToOrder(itemId) {
-
     const updatedCart = await ordersAPI.addItemToCart(itemId);
     setCart(updatedCart);
   }
@@ -36,8 +36,10 @@ export default function App() {
     setCart(updatedCart);
   }
 
-  async function handleCheckout() {
-    await ordersAPI.checkout();
+  async function handleCheckout(evt, orderData) {
+    evt.preventDefault();
+    console.log(orderData);
+    await ordersAPI.checkout(orderData);
     navigate('/orders');
   }
 
@@ -50,13 +52,16 @@ export default function App() {
               <Route path="/orders/new" element={<HomePage  handleAddToOrder={handleAddToOrder}/>} />
               <Route path="/orders" element={<OrderHistoryPage user={user} setUser={setUser} />} />
               <Route path="/api/items/:itemId" element={<ProductDetailPage handleAddToOrder={handleAddToOrder}/>} />
+              <Route path="/cart/checkout" element={<CheckOutPage               
+                                                    order={cart}
+                                                    handleChangeQty={handleChangeQty}
+                                                    handleCheckout={handleCheckout} />} />
               <Route path="/*" element={<Navigate to="/orders/new" />} />
             </Routes>
             {showCart && 
               <OrderDetail 
               order={cart}
               handleChangeQty={handleChangeQty}
-              handleCheckout={handleCheckout} 
               />
             }
             <Footer />

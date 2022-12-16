@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import './OrderHistoryPage.css';
 import * as ordersAPI from '../../utilities/orders-api';
-import OrderDetail from '../../components/OrderDetail/OrderDetail';
 import OrderList from '../../components/OrderList/OrderList';
+
 
 export default function OrderHistoryPage({user, setUser}) {
   const [orders, setOrders] = useState([]);
@@ -12,11 +11,13 @@ export default function OrderHistoryPage({user, setUser}) {
   useEffect(function() {
     async function getOrders() {
       const orders = await ordersAPI.getAllForUser();
+      console.log(orders);
       setActiveOrder(orders[0] || null);
       setOrders(orders);
     }
     getOrders();
   }, []);
+
 
   return (
     <>
@@ -26,7 +27,6 @@ export default function OrderHistoryPage({user, setUser}) {
         activeOrder={activeOrder}
         setActiveOrder={setActiveOrder}
       />
-      {/* <OrderDetail order={activeOrder} /> */}
     </>
   );
 }
