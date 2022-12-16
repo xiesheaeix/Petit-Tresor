@@ -46,11 +46,12 @@ video {
 .overlay h1 {
   background: #000 none repeat scroll 0 0;
   color: tan;
-  font-size: 10vmin;
+  font-size: 8vmin;
   margin: -18rem 3rem 0;
   mix-blend-mode: overlay;
   border-radius: 10vmin;
   padding: 1vmin 5vmin;
+  margin-left: 35vmin;
 }
 
 .company-mission {
@@ -61,7 +62,6 @@ video {
 }
 
 
-
 @media screen and (max-width: 480px) {
   .overlay h1 {
     font-size: 8vmin;
@@ -70,6 +70,6 @@ video {
 
   .company-mission {
     padding: 10vmin;
-    margin-top: -37rem;
+    margin-top: -3rem;
   }
 }

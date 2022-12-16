@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import * as userService from '../../utilities/users-service';
 import './NavBar.css'
 
-export default function NavBar({ user, setUser }) {
+export default function NavBar({ user, setUser, showCart, setShowCart }) {
   function handleLogOut() {
     userService.logOut();
     setUser(null);
@@ -11,16 +11,19 @@ export default function NavBar({ user, setUser }) {
   return (
     <nav>
       <div className="navbar">
-        <ul>
-          <li><Link to="/orders/new">Home</Link></li>
-          <li><Link to="/orders">Past Orders</Link></li>
-          {/* TODO: create cart button that shows and hides Cart Order Component */}
-          <li><Link to="/">Cart</Link></li>
-        </ul>
+        <div className='nav-links'>
+          <ul>
+            <li><Link to="/orders/new">Home</Link></li>
+            <li><Link to="/orders">Past Orders</Link></li>
+            {/* TODO: create cart button that shows and hides Cart Order Component */}
+          </ul>
+        </div>
         <div className="navbar-user">
-          <span>Welcome, {user.name}</span>
-          &nbsp;&nbsp;
-          <Link to="" onClick={handleLogOut}>Log Out</Link>
+          <ul>
+            <li><button onClick={() => setShowCart(!showCart)}>{showCart ? "HIDE" : "SHOW"}</button></li>
+            <li><span>Welcome, {user.name}</span></li>
+            <li><Link to="" onClick={handleLogOut}>Log Out</Link></li>
+          </ul>
         </div>
       </div>
     </nav>

@@ -1,35 +1,37 @@
+
+
 .CategoryList {
-   border-top: solid 2px black;
-   border-bottom: solid 2px black;
-   background-color: white;
-   margin-top: 30vmin;
-   padding-top: 1vmin;
-   padding-bottom: 1vmin;
+  border-top: solid 2px black;
+  border-bottom: solid 2px black;
+  background-color: white;
+  margin-top: 30vmin;
+  padding-top: 1vmin;
+  padding-bottom: 1vmin;
 }
 
-  
+ 
 .CategoryList li {
-  list-style: none;
-  padding: .6vmin;
-  text-align: center;
-  border-radius: .5vmin;
-  margin-bottom: .5vmin;
+ list-style: none;
+ padding: .6vmin;
+ text-align: center;
+ border-radius: .5vmin;
+ margin-bottom: .5vmin;
 }
-    
+   
 .CategoryList li:hover:not(.active) {
-  cursor: pointer;
-  background-color: tan;
-  color: var(--white);
+ cursor: pointer;
+ background-color: tan;
+ color: var(--white);
 }
 
 .CategoryList li.active {
-  color: var(--text-dark);
-  background-color: var(--tan-1);
-  border: .1vmin solid var(--tan-3);
+ color: var(--text-dark);
+ background-color: var(--tan-1);
+ border: .1vmin solid var(--tan-3);
 }
 
 @media screen and (max-width: 480px) {
-  .CategoryList {
-    margin-left: -11vmin;
-  }
+ .CategoryList {
+   margin-left: -11vmin;
+ }
 }

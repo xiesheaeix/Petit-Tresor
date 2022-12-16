@@ -1,4 +1,11 @@
-
+/* .material-symbols-sharp {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 200,
+    'opsz' 48
+  };
+   */
 nav {
     position: sticky;
     top: 0;
@@ -10,24 +17,29 @@ nav {
     border-bottom: solid 2px black;
 }
 
-.navbar ul {
+.nav-links ul {
     list-style: none;
     display: flex;
 }
 
-.navbar li {
+.nav-links li {
     padding: 3vmin;
 }
 
-.navbar a {
+.nav-links a, .navbar-user a {
     color: black;
     text-decoration: none;
 }
 
 .navbar-user {
-    margin-top: -6vmin;
+    margin-top: -15vmin;
     margin-right: 3vmin;
     float: right;
+}
+
+.navbar-user ul {
+    padding-top: -10px;
+    list-style: none;
 }
 
   

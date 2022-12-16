@@ -1,25 +1,23 @@
 import './ProductListItem.css';
+import {Link} from "react-router-dom";
 
-export default function ProductListItem({ productItem }) {
+export default function ProductListItem({ productItem, handleAddToOrder }) {
   return (
     <div className="ProductListItems">
-
-      {/* {productItem.images.map((url, idx) => (
-        <div key={idx} className="product-imgs"><img src={`${url}`} alt="" /></div>
-      ))} */}
       <div className="product-item-card">
-          <div className="product-img"><img  className="item-img" src={`${productItem.images[0]}`} alt="" /></div>
+        <Link to={`/api/items/${productItem._id}`}>
+          <div className="product-img"><img className="item-img" src={`${productItem.images[0]}`} alt="" /></div>
+        </Link>
         <div className="product-details">
           <p>{productItem.name}</p>
-          <p>$ {productItem.price}</p>
+          <div className="buy">
+            <span>${productItem.price}</span>
+            <button className="btn-sm" onClick={() => handleAddToOrder(productItem._id)}>
+              ADD
+            </button>
+          </div>
         </div>
       </div>
-      {/* <div className="buy">
-        <span>${menuItem.price.toFixed(2)}</span>
-        <button className="btn-sm" onClick={() => handleAddToOrder(menuItem._id)}>
-          ADD
-        </button>
-      </div> */}
     </div>
   );
 }

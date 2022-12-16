@@ -6,7 +6,7 @@ import ProductList from '../../components/ProductList/ProductList';
 import './HomePage.css';
 // import ProductListItem from '../../components/ProductListItem/ProductListItem';
 
-export default function HomePage() {
+export default function HomePage({handleAddToOrder}) {
   const [productItems, setProductItems] = useState([]);
   const [activeCat, setActiveCat] = useState('');
   const categoriesRef = useRef([]);
@@ -31,7 +31,7 @@ export default function HomePage() {
       />
       <ProductList
         productItems={productItems.filter(item => item.category.name === activeCat)}
-        // handleAddToOrder={handleAddToOrder}
+        handleAddToOrder={handleAddToOrder}
       />
     </div>
   );

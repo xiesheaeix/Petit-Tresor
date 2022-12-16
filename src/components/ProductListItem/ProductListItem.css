@@ -2,25 +2,26 @@
 .product-item-card {
     background-color: tan;
     border-radius: 6px;
-    box-shadow: 1px 3px 7px 2px rgba(0, 0, 0, 0.5);
-    height: 25vh;
+    width: 100%;
+    /* box-shadow: 1px 3px 7px 2px rgba(0, 0, 0, 0.5); */
   }
   
   .product-img {
-    margin-right: 5vmin;
     margin-bottom: 5vmin;
   }
 
   .item-img {
     height: 25vh;
-    width: 25vh;
+    width: 100%;
     border-radius: 6px;
+    box-shadow: 1px 3px 7px 2px rgba(0, 0, 0, 0.5);
+
   }
 
   
   .product-details {
     color: white;
-    margin: 2vmin auto;
+    margin: -4vmin auto;
     text-align: center;
   }
 
