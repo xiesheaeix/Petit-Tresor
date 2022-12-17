@@ -32,7 +32,7 @@ const orderSchema = new Schema({
   },
   lineItems: [lineItemSchema],
   isPaid: { type: Boolean, default: false },
-  shipment: {type: Object},
+  shipment: [{type: Object}],
 }, {
   timestamps: true,
   toJSON: { virtuals: true }

@@ -7,7 +7,7 @@ import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
 import NavBar from '../../components/NavBar/NavBar';
 import Footer from '../../components/Footer/Footer';
 import ProductDetailPage from '../ProductDetailPage/ProductDetailPage';
-import OrderDetail from '../../components/OrderDetail/OrderDetail';
+import CartDetail from '../../components/CartDetail/CartDetail';
 import { getUser } from '../../utilities/users-service';
 import './App.css';
 import CheckOutPage from '../CheckOutPage/CheckOutPage';
@@ -38,7 +38,6 @@ export default function App() {
 
   async function handleCheckout(evt, orderData) {
     evt.preventDefault();
-    console.log(orderData);
     await ordersAPI.checkout(orderData);
     navigate('/orders');
   }
@@ -50,7 +49,7 @@ export default function App() {
             <NavBar user={user} setUser={setUser} showCart={showCart} setShowCart={setShowCart} />
             <Routes>
               <Route path="/orders/new" element={<HomePage  handleAddToOrder={handleAddToOrder}/>} />
-              <Route path="/orders" element={<OrderHistoryPage user={user} setUser={setUser} />} />
+              <Route path="/orders" element={<OrderHistoryPage handleChangeQty={handleChangeQty} />} />
               <Route path="/api/items/:itemId" element={<ProductDetailPage handleAddToOrder={handleAddToOrder}/>} />
               <Route path="/cart/checkout" element={<CheckOutPage               
                                                     order={cart}
@@ -59,7 +58,7 @@ export default function App() {
               <Route path="/*" element={<Navigate to="/orders/new" />} />
             </Routes>
             {showCart && 
-              <OrderDetail 
+              <CartDetail 
               order={cart}
               handleChangeQty={handleChangeQty}
               />

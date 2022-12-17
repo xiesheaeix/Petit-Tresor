@@ -2,9 +2,10 @@ import { useState, useEffect } from 'react';
 import './OrderHistoryPage.css';
 import * as ordersAPI from '../../utilities/orders-api';
 import OrderList from '../../components/OrderList/OrderList';
+import OrderDetail from '../../components/OrderDetail/OrderDetail';
 
 
-export default function OrderHistoryPage({user, setUser}) {
+export default function OrderHistoryPage({ handleChangeQty }) {
   const [orders, setOrders] = useState([]);
   const [activeOrder, setActiveOrder] = useState(null);
 
@@ -21,12 +22,15 @@ export default function OrderHistoryPage({user, setUser}) {
 
   return (
     <>
-      <h1>OrderHistoryPage</h1>
+    <h1>OrderHistoryPage</h1>
+    <div className='order-history'>
       <OrderList
         orders={orders}
         activeOrder={activeOrder}
         setActiveOrder={setActiveOrder}
       />
+      <OrderDetail order={activeOrder} handleChangeQty={handleChangeQty}/>
+    </div>
     </>
   );
 }

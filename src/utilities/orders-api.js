@@ -18,7 +18,6 @@ export function setItemQtyInCart(itemId, newQty) {
 
 // Updates the order's (cart's) isPaid property to true
 export function checkout(orderData) {
-    //console.log(orderData);
   return sendRequest(`${BASE_URL}/cart/checkout`, 'POST', orderData);
 }
 

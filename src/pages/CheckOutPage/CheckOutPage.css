@@ -5,7 +5,7 @@ h1 {
 .checkout-page {
     display: flex;
     margin-top: 6vmin;
-    margin-left: 8vmin;
+    margin-left: 10%;
 }
 
 .checkout-page h1 {

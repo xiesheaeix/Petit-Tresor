@@ -21,6 +21,9 @@ export default function CheckOutPage ({order, handleChangeQty, handleCheckout}) 
         <div className="checkout-page">
         <CheckOutForm handleCheckout={handleCheckout}/>
             <section className="checkout-items">
+            {order.shipment.map((data, idx) => (
+                    <div key={idx}>{data.name} {data.address}</div>
+                ))}
                 <span>ORDER <span className="smaller">{order.orderId}</span></span>
                 <span>{new Date(order.updatedAt).toLocaleDateString()}</span>
                     {lineItems}
