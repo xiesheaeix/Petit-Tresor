@@ -16,3 +16,8 @@ footer a {
 footer a:hover{
     color: tan;
 }
+
+.react-icons {
+    font-size: 10vmin;
+    size: 10em;
+}

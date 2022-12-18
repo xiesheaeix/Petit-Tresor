@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
+import { Routes, Route, Navigate, useNavigate, Link } from 'react-router-dom';
 import * as ordersAPI from '../../utilities/orders-api';
 import AuthPage from '../AuthPage/AuthPage';
 import HomePage from '../HomePage/HomePage';
@@ -11,11 +11,12 @@ import CartDetail from '../../components/CartDetail/CartDetail';
 import { getUser } from '../../utilities/users-service';
 import './App.css';
 import CheckOutPage from '../CheckOutPage/CheckOutPage';
+import AdminPage from '../AdminPage/AdminPage';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
   const [cart, setCart] = useState(null);
-  const [showCart, setShowCart] = useState(null);
+  const [showCart, setShowCart] = useState(false);
   const navigate = useNavigate();
 
   useEffect(function() {
@@ -46,27 +47,35 @@ export default function App() {
     <main className="App">
       { user ?
           <>
-            <NavBar user={user} setUser={setUser} showCart={showCart} setShowCart={setShowCart} />
+            <NavBar setUser={setUser} showCart={showCart} setShowCart={setShowCart} order={cart}/>
             <Routes>
               <Route path="/orders/new" element={<HomePage  handleAddToOrder={handleAddToOrder}/>} />
-              <Route path="/orders" element={<OrderHistoryPage handleChangeQty={handleChangeQty} />} />
+              <Route path="/orders" element={<OrderHistoryPage user={user} handleChangeQty={handleChangeQty} />} />
               <Route path="/api/items/:itemId" element={<ProductDetailPage handleAddToOrder={handleAddToOrder}/>} />
               <Route path="/cart/checkout" element={<CheckOutPage               
                                                     order={cart}
                                                     handleChangeQty={handleChangeQty}
                                                     handleCheckout={handleCheckout} />} />
+              <Route path="/admin" element={<AdminPage/>} />
               <Route path="/*" element={<Navigate to="/orders/new" />} />
             </Routes>
             {showCart && 
-              <CartDetail 
-              order={cart}
-              handleChangeQty={handleChangeQty}
+              <CartDetail
+                user={user}
+                order={cart}
+                handleChangeQty={handleChangeQty}
               />
             }
+            <Link to="/admin">Admin Page</Link>
             <Footer />
           </>
          :
+         <>
+         
+         <Routes>
+       </Routes>
          <AuthPage setUser={setUser} />
+         </>
       }
     </main>
   );

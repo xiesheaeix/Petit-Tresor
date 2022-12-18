@@ -17,12 +17,6 @@ export default function OrderDetail({ order, handleChangeQty }) {
     return (
       <div className="OrderDetail">
         <div className="section-heading">
-          {/* <h1>Cart</h1> */}
-          {/* {order.isPaid ?
-            <span>ORDER <span className="smaller">{order.orderId}</span></span>
-            :
-            <span>NEW ORDER</span>
-          } */}
           <span>{new Date(order.updatedAt).toLocaleDateString()}</span>
         </div>
         <div className="line-item-container flex-ctr-ctr flex-col scroll-y">
@@ -38,7 +32,6 @@ export default function OrderDetail({ order, handleChangeQty }) {
                   :
                   <button
                     className="btn-sm"
-                    // onClick={() => navigate('/cart/checkout')}
                     disabled={!lineItems.length}
                   >CHECKOUT</button>
                 }

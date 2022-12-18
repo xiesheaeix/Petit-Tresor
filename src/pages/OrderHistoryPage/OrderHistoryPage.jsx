@@ -5,7 +5,7 @@ import OrderList from '../../components/OrderList/OrderList';
 import OrderDetail from '../../components/OrderDetail/OrderDetail';
 
 
-export default function OrderHistoryPage({ handleChangeQty }) {
+export default function OrderHistoryPage({ user, handleChangeQty }) {
   const [orders, setOrders] = useState([]);
   const [activeOrder, setActiveOrder] = useState(null);
 
@@ -22,7 +22,7 @@ export default function OrderHistoryPage({ handleChangeQty }) {
 
   return (
     <>
-    <h1>OrderHistoryPage</h1>
+    <h1>Order History for {user.name}</h1>
     <div className='order-history'>
       <OrderList
         orders={orders}
