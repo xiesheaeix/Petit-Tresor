@@ -10,5 +10,9 @@ export async function getById(itemId) {
 }
 
 export async function createItem(productData) {
-  return sendRequest(BASE_URL, 'POST', productData)
+  return sendRequest(`${BASE_URL}/new`, 'POST', productData)
+}
+
+export async function removeItem(itemId) {
+  return sendRequest(`${BASE_URL}/${itemId}`, 'DELETE');
 }

@@ -25,3 +25,7 @@ export function checkout(orderData) {
 export function getAllForUser() {
   return sendRequest(`${BASE_URL}`);
 }
+
+export function getAllOrders() {
+    return sendRequest(`${BASE_URL}/all`);
+}

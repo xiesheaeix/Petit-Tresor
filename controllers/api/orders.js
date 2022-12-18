@@ -5,12 +5,17 @@ module.exports = {
   addToCart,
   setItemQtyInCart,
   checkout,
-  getAllForUser
+  getAllForUser,
+  getAllOrders
 };
+
+async function getAllOrders(req, res) {
+  const orders = await Order.find({isPaid: true});
+  res.json(orders);
+}
 
 async function getAllForUser(req, res) {
   const orders = await Order.find({user: req.user._id, isPaid: true}).sort('-updatedAt');
-  console.log(orders)
   res.json(orders);
 }
 

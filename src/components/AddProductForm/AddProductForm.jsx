@@ -1,24 +1,35 @@
 import { useState } from 'react';
+// import * as itemsAPI from '../../utilities/items-api'
 
-export default function AddProductForm() {
+export default function AddProductForm({addProduct}) {
     const [newProduct, setNewProduct] = useState({
       name: "",
       images: [],
-      category: "",
+    //   category: "",
       price: 0,
       description: ""
     });
    
     function handleChange (evt) {
-      const newProductData = {...newProduct, [evt.target.name]: evt.target.value };
-      setNewProduct(newProductData);
+      setNewProduct({...newProduct, [evt.target.name]: evt.target.value });
     }
+
+    async function handleAddProduct(evt) {
+        evt.preventDefault();
+        addProduct(newProduct);
+        setNewProduct({
+            name: "",
+            images: [],
+            // category: "",
+            price: 0,
+            description: ""
+          });
+      }
   
     return (
       <>
         <h1>New Product</h1>
-        <form>
-        {/* <form onSubmit={evt => handleAddProduct(evt, newProduct)}> */}
+        <form onSubmit={handleAddProduct}>
         <label>Name</label>
           <input
               name="name"
@@ -35,14 +46,17 @@ export default function AddProductForm() {
               onChange={handleChange}
               required 
           />
-        <label>category</label>
-          <input
-              name="category"
-              type="text"
+        {/* <label>category</label>
+          <select 
+              name="category" 
               value={newProduct.category}
-              onChange={handleChange}
-              required 
-          />
+              onChange={handleChange}>
+            <option value="Necklaces">Necklaces</option>
+            <option value="Ring">Rings</option>
+            <option value="Bracelets">Bracelets</option>
+            <option value="Earrings">Earrings</option>
+          </select>
+           */}
         <label>Price</label>
           <input
               name="price"

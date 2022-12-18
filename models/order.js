@@ -15,15 +15,6 @@ lineItemSchema.virtual('extPrice').get(function() {
   return this.qty * this.item.price;
 });
 
-// const shipmentSchema = new Schema({
-//     fullName: {type: String},
-//     address:  {type: String},
-//     city:  {type: String},
-//     state:  {type: String, maxLength: 3},
-//     zip: {type: Number, max: 10}
-// });
-
-
 const orderSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,

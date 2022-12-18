@@ -3,7 +3,8 @@ const Item = require('../../models/item');
 module.exports = {
   index,
   show, 
-  create
+  create,
+  deleteItem
 };
 
 async function index(req, res) {
@@ -20,9 +21,14 @@ async function show(req, res) {
 async function create(req, res) {
   try {
     const item = await Item.create(req.body);
-    item.save();
+    // item.save();
     res.json(item);
   } catch (err) {
-    res.status(404).json(err);
+    res.status(400).json(err);
   }
+}
+
+async function deleteItem(req, res) {
+  const item = await Item.findByIdAndDelete(req.params.id);
+  res.json(item);
 }
