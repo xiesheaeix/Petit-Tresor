@@ -8,3 +8,7 @@ export async function getAll() {
 export async function getById(itemId) {
   return sendRequest(`${BASE_URL}/${itemId}`);
 }
+
+export async function createItem(productData) {
+  return sendRequest(BASE_URL, 'POST', productData)
+}

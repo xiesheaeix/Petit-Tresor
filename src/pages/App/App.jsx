@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Routes, Route, Navigate, useNavigate, Link } from 'react-router-dom';
+import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import * as ordersAPI from '../../utilities/orders-api';
 import AuthPage from '../AuthPage/AuthPage';
 import HomePage from '../HomePage/HomePage';
@@ -56,7 +56,7 @@ export default function App() {
                                                     order={cart}
                                                     handleChangeQty={handleChangeQty}
                                                     handleCheckout={handleCheckout} />} />
-              <Route path="/admin" element={<AdminPage/>} />
+              <Route path="/admin" element={<AdminPage />} />
               <Route path="/*" element={<Navigate to="/orders/new" />} />
             </Routes>
             {showCart && 
@@ -66,14 +66,10 @@ export default function App() {
                 handleChangeQty={handleChangeQty}
               />
             }
-            <Link to="/admin">Admin Page</Link>
-            <Footer />
+            <Footer user={user}/>
           </>
          :
          <>
-         
-         <Routes>
-       </Routes>
          <AuthPage setUser={setUser} />
          </>
       }

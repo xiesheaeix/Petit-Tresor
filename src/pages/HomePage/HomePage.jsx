@@ -4,7 +4,6 @@ import CategoryList from '../../components/CategoryList/CategoryList';
 import Header from '../../components/Header/Header';
 import ProductList from '../../components/ProductList/ProductList';
 import './HomePage.css';
-// import ProductListItem from '../../components/ProductListItem/ProductListItem';
 
 export default function HomePage({handleAddToOrder}) {
   const [productItems, setProductItems] = useState([]);

@@ -3,7 +3,7 @@ import * as userService from '../../utilities/users-service';
 import './NavBar.css'
 import {AiOutlineShoppingCart} from 'react-icons/ai'
 
-export default function NavBar({ order, setUser, showCart, setShowCart }) {
+export default function NavBar({ setUser, showCart, setShowCart }) {
 
   function handleLogOut() {
     userService.logOut();
@@ -20,7 +20,6 @@ export default function NavBar({ order, setUser, showCart, setShowCart }) {
           </ul>
         </div>
         <div className="navbar-user">
-        {/* {order.totalQty} */}
           <ul>
             <li><button onClick={() => setShowCart(!showCart)}><AiOutlineShoppingCart/></button></li>
             <li><Link to="" onClick={handleLogOut}>Log Out</Link></li>
