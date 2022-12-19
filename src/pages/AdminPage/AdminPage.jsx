@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
 import AddProductForm from "../../components/AddProductForm/AddProductForm";
 import UpdateOrderForm from "../../components/UpdateOrderForm/UpdateOrderForm"
 import * as itemsAPI from '../../utilities/items-api';
@@ -24,9 +24,9 @@ export default function AdminPage({categories}) {
         getOrders();
       }, []);
   
-    async function updateOrder(orderId, orderData){
+    async function updateOrder(orderData){
         console.log(orderData)
-        const updatedOrder = await ordersAPI.updateOrder(orderId, orderData);
+        const updatedOrder = await ordersAPI.updateOrder(orderData);
         setAllOrders([...allOrders, updatedOrder]);
     }
 
@@ -55,7 +55,7 @@ export default function AdminPage({categories}) {
                     </div>
                 ))}
             </div>
-            <AddProductForm addProduct={addProduct}/>
+            <AddProductForm addProduct={addProduct} categories={categories} />
             <h1>ACTIVE ORDERS</h1>
             <div className="orders">
                 {allOrders.map((order, idx) => (

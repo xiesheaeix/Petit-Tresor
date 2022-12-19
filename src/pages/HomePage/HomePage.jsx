@@ -23,17 +23,20 @@ export default function HomePage({ user, handleAddToOrder}) {
 
   return (
     <div className="HomePage">
-      {user.admin ? <AdminPage categories={categoriesRef.current}/> : <>      
-      <Header />
-      <CategoryList           
-        categories={categoriesRef.current}
-        activeCat={activeCat}
-        setActiveCat={setActiveCat} 
-      />
-      <ProductList
-        productItems={productItems.filter(item => item.category.name === activeCat)}
-        handleAddToOrder={handleAddToOrder}
-      /></>}
+      {user.admin ? <AdminPage categories={categoriesRef.current} /> 
+      :
+      <>      
+        <Header />
+        <CategoryList           
+          categories={categoriesRef.current}
+          activeCat={activeCat}
+          setActiveCat={setActiveCat} 
+        />
+        <ProductList
+          productItems={productItems.filter(item => item.category.name === activeCat)}
+          handleAddToOrder={handleAddToOrder}
+        />
+      </>}
     </div>
   );
 }

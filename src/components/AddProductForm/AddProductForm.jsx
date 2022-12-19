@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
-export default function AddProductForm({addProduct}) {
+export default function AddProductForm({addProduct, categories}) {
     const [newProduct, setNewProduct] = useState({
       name: "",
       images: [],
-      category: "",
+      category: {categories},
       price: 0,
       description: ""
     });
@@ -19,7 +19,7 @@ export default function AddProductForm({addProduct}) {
         setNewProduct({
             name: "",
             images: [],
-            category: "",
+            category: {categories},
             price: 0,
             description: ""
           });
@@ -45,16 +45,15 @@ export default function AddProductForm({addProduct}) {
               onChange={handleChange}
               required 
           />
-        {/* <label>category</label>
+        <label>category</label>
           <select 
               name="category" 
               value={newProduct.category}
               onChange={handleChange}>
-            <option value="Necklaces">Necklaces</option>
-            <option value="Ring">Rings</option>
-            <option value="Bracelets">Bracelets</option>
-            <option value="Earrings">Earrings</option>
-          </select> */}
+            {categories.map ((cat, idx) => (
+              <option key={idx} value={cat}>{cat}</option>
+            ))}
+          </select>
         <label>Price</label>
           <input
               name="price"

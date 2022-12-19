@@ -13,6 +13,8 @@ export function addItemToCart(itemId) {
 }
 
 export function setItemQtyInCart(itemId, newQty) {
+  console.log(itemId)
+  console.log(newQty)
   return sendRequest(`${BASE_URL}/cart/qty`, 'PUT', { itemId, newQty });
 }
 
@@ -30,6 +32,8 @@ export function getAllActiveOrders() {
     return sendRequest(`${BASE_URL}/all`);
 }
 
-export function updateOrder(orderId, orderData) {
-  return sendRequest(`${BASE_URL}/update/${orderId}`, 'PUT', orderData)
+export function updateOrder(itemId, orderData) {
+  console.log(orderData)
+  console.log(itemId)
+  return sendRequest(`${BASE_URL}/update`, 'PUT', {itemId, orderData})
 }

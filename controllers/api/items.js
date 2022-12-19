@@ -20,7 +20,7 @@ async function show(req, res) {
 
 async function create(req, res) {
   try {
-    const item = await Item.create(req.body).populate('category').exec();
+    const item = await Item.create(req.body);
     res.json(item);
   } catch (err) {
     res.status(400).json(err);

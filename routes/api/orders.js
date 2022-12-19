@@ -16,7 +16,7 @@ router.post('/cart/items/:id', ordersCtrl.addToCart);
 router.post('/cart/checkout', ordersCtrl.checkout);
 // PUT /api/orders/cart/qty
 router.put('/cart/qty', ordersCtrl.setItemQtyInCart);
-// PUT /api/order/update/:id
-router.put('/update/:id', ensureAdminUser, ordersCtrl.updateOrder);
+// PUT /api/order/update
+router.put('/update', ensureAdminUser, ordersCtrl.updateOrder);
 
 module.exports = router;
