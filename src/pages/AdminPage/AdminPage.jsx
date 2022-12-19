@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import AddProductForm from "../../components/AddProductForm/AddProductForm";
+import UpdateOrderForm from "../../components/UpdateOrderForm/UpdateOrderForm"
 import * as itemsAPI from '../../utilities/items-api';
 import * as ordersAPI from '../../utilities/orders-api';
 import './AdminPage.css'
@@ -7,6 +8,7 @@ import './AdminPage.css'
 export default function AdminPage() {
     const [allProducts, setAllProducts] = useState([]);
     const [allOrders, setAllOrders] = useState([]);
+
 
     useEffect(function() {
         async function getProducts() {
@@ -16,12 +18,17 @@ export default function AdminPage() {
         getProducts();
 
         async function getOrders() {
-            const orders = await ordersAPI.getAllOrders();
+            const orders = await ordersAPI.getAllActiveOrders();
             setAllOrders(orders)
         }
         getOrders();
       }, []);
-
+  
+    async function updateOrder(orderId, orderData){
+        console.log(orderData)
+        const updatedOrder = await ordersAPI.updateOrder(orderId, orderData);
+        setAllOrders([...allOrders, updatedOrder]);
+    }
 
     async function addProduct(productData) {
         console.log(productData)
@@ -48,11 +55,11 @@ export default function AdminPage() {
                 ))}
             </div>
             <AddProductForm addProduct={addProduct}/>
-            <h1>ALL ORDERS</h1>
+            <h1>ACTIVE ORDERS</h1>
             <div className="orders">
                 {allOrders.map((order, idx) => (
                         <div key={idx} className="order-info">
-                            {order.orderId}<br></br>
+                            Order ID: {order.orderId}<br></br>
                             Ordered on: {new Date(order.updatedAt).toLocaleDateString()}<br></br>
                             Order Total: ${order.orderTotal}
                             {order.shipment.map((info, idx) => (
@@ -67,6 +74,7 @@ export default function AdminPage() {
                                     </p>
                                 </div>
                             ))}
+                            <UpdateOrderForm updateOrder={updateOrder}/>
                         </div>
                     ))}
             </div>

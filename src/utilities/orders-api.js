@@ -26,6 +26,10 @@ export function getAllForUser() {
   return sendRequest(`${BASE_URL}`);
 }
 
-export function getAllOrders() {
+export function getAllActiveOrders() {
     return sendRequest(`${BASE_URL}/all`);
+}
+
+export function updateOrder(orderId, orderData) {
+  return sendRequest(`${BASE_URL}/update/${orderId}`, 'PUT', orderData)
 }

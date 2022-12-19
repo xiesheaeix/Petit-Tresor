@@ -28,7 +28,7 @@ export default function AddProductForm({addProduct}) {
   
     return (
       <>
-        <h1>New Product</h1>
+        <h1>Add New Product</h1>
         <form onSubmit={handleAddProduct}>
         <label>Name</label>
           <input

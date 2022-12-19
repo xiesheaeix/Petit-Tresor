@@ -23,6 +23,8 @@ const orderSchema = new Schema({
   },
   lineItems: [lineItemSchema],
   isPaid: { type: Boolean, default: false },
+  isShipped: { type: Boolean, default: false },
+  trackingNum: { type: String },
   shipment: [{type: Object}],
 }, {
   timestamps: true,

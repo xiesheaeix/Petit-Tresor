@@ -6,11 +6,22 @@ module.exports = {
   setItemQtyInCart,
   checkout,
   getAllForUser,
-  getAllOrders
+  getAllActiveOrders,
+  updateOrder
 };
 
-async function getAllOrders(req, res) {
-  const orders = await Order.find({isPaid: true});
+async function updateOrder(req, res) {
+  const updatedItem = await Order.findByIdAndUpdate(
+      {id: req.params.id},
+      {isShipped: true, trackingNum: req.body.trackingNum},
+      {new: true} 
+    );
+    res.json(updatedItem);
+
+}
+
+async function getAllActiveOrders(req, res) {
+  const orders = await Order.find({isPaid: true, isShipped: false});
   res.json(orders);
 }
 
