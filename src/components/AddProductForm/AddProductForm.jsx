@@ -1,11 +1,10 @@
 import { useState } from 'react';
-// import * as itemsAPI from '../../utilities/items-api'
 
 export default function AddProductForm({addProduct}) {
     const [newProduct, setNewProduct] = useState({
       name: "",
       images: [],
-    //   category: "",
+      category: "",
       price: 0,
       description: ""
     });
@@ -20,7 +19,7 @@ export default function AddProductForm({addProduct}) {
         setNewProduct({
             name: "",
             images: [],
-            // category: "",
+            category: "",
             price: 0,
             description: ""
           });
@@ -55,8 +54,7 @@ export default function AddProductForm({addProduct}) {
             <option value="Ring">Rings</option>
             <option value="Bracelets">Bracelets</option>
             <option value="Earrings">Earrings</option>
-          </select>
-           */}
+          </select> */}
         <label>Price</label>
           <input
               name="price"

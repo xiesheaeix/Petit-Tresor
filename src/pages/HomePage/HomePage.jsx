@@ -4,8 +4,9 @@ import CategoryList from '../../components/CategoryList/CategoryList';
 import Header from '../../components/Header/Header';
 import ProductList from '../../components/ProductList/ProductList';
 import './HomePage.css';
+import AdminPage from '../AdminPage/AdminPage';
 
-export default function HomePage({handleAddToOrder}) {
+export default function HomePage({ user, handleAddToOrder}) {
   const [productItems, setProductItems] = useState([]);
   const [activeCat, setActiveCat] = useState('');
   const categoriesRef = useRef([]);
@@ -22,6 +23,7 @@ export default function HomePage({handleAddToOrder}) {
 
   return (
     <div className="HomePage">
+      {user.admin ? <AdminPage categories={categoriesRef.current}/> : <>      
       <Header />
       <CategoryList           
         categories={categoriesRef.current}
@@ -31,7 +33,7 @@ export default function HomePage({handleAddToOrder}) {
       <ProductList
         productItems={productItems.filter(item => item.category.name === activeCat)}
         handleAddToOrder={handleAddToOrder}
-      />
+      /></>}
     </div>
   );
 }

@@ -5,7 +5,7 @@ import * as itemsAPI from '../../utilities/items-api';
 import * as ordersAPI from '../../utilities/orders-api';
 import './AdminPage.css'
 
-export default function AdminPage() {
+export default function AdminPage({categories}) {
     const [allProducts, setAllProducts] = useState([]);
     const [allOrders, setAllOrders] = useState([]);
 
@@ -39,6 +39,7 @@ export default function AdminPage() {
     async function deleteProduct(itemId) {
         const products = await itemsAPI.removeItem(itemId);
         setAllProducts(products);
+        window.location.reload(false);
     }
 
     return (

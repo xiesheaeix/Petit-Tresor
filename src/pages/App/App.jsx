@@ -49,7 +49,7 @@ export default function App() {
           <>
             <NavBar setUser={setUser} showCart={showCart} setShowCart={setShowCart} order={cart}/>
             <Routes>
-              <Route path="/orders/new" element={<HomePage  handleAddToOrder={handleAddToOrder}/>} />
+              <Route path="/orders/new" element={<HomePage user={user} handleAddToOrder={handleAddToOrder}/>} />
               <Route path="/orders" element={<OrderHistoryPage user={user} handleChangeQty={handleChangeQty} />} />
               <Route path="/api/items/:itemId" element={<ProductDetailPage handleAddToOrder={handleAddToOrder}/>} />
               <Route path="/cart/checkout" element={<CheckOutPage               
