@@ -7,7 +7,7 @@ const ensureAdminUser = require('../../config/ensureAdminUser');
 router.get('/', itemsCtrl.index);
 // GET /api/items/:id
 router.get('/:id', itemsCtrl.show);
-// POST /api/items/new
+// POST /api/items
 router.post('/new', ensureAdminUser, itemsCtrl.create);
 // DELETE /api/items/:id
 router.delete('/:id', ensureAdminUser, itemsCtrl.deleteItem);

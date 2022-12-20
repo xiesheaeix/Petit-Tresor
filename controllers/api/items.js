@@ -1,4 +1,6 @@
 const Item = require('../../models/item');
+const Category = require('../../models/category');
+
 
 module.exports = {
   index,
@@ -18,9 +20,13 @@ async function show(req, res) {
   res.json(item);
 }
 
-async function create(req, res) {
+function create(req, res) {
   try {
-    const item = await Item.create(req.body);
+    const category = Category.find({name: req.body.category});
+    req.body.category = category;
+    console.log("$$$", category._id);
+    const item = new Item(req.body);
+    item.save();
     res.json(item);
   } catch (err) {
     res.status(400).json(err);
