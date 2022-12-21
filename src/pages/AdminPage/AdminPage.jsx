@@ -39,7 +39,6 @@ export default function AdminPage({categories}) {
     async function deleteProduct(itemId) {
         const products = await itemsAPI.removeItem(itemId);
         setAllProducts(products);
-        window.location.reload(false);
     }
 
     return (

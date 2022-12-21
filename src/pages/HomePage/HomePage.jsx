@@ -10,11 +10,16 @@ export default function HomePage({ user, handleAddToOrder}) {
   const [productItems, setProductItems] = useState([]);
   const [activeCat, setActiveCat] = useState('');
   const categoriesRef = useRef([]);
+  const catObjectsRef = useRef([]);
+
 
   useEffect(function() {
     async function getItems() {
       const items = await itemsAPI.getAll();
       categoriesRef.current = [...new Set(items.map(item => item.category.name))];
+      catObjectsRef.current = items.map(item => item.category).reduce(function (cats, curCat) {
+        return cats.some(c => c._id === curCat._id) ? cats : [...cats, curCat];
+      }, []);
       setProductItems(items);
       setActiveCat(categoriesRef.current[0]);
     }
@@ -23,7 +28,7 @@ export default function HomePage({ user, handleAddToOrder}) {
 
   return (
     <div className="HomePage">
-      {user.admin ? <AdminPage categories={categoriesRef.current} /> 
+      {user.admin ? <AdminPage categories={catObjectsRef.current} /> 
       :
       <>      
         <Header />

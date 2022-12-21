@@ -20,12 +20,9 @@ async function show(req, res) {
   res.json(item);
 }
 
-function create(req, res) {
+async function create(req, res) {
   try {
-    // const category = Category.find({name: req.body.category});
-    // req.body.category = category;
-    const item = new Item(req.body);
-    item.save();
+    const item = await Item.create(req.body);
     res.json(item);
   } catch (err) {
     res.status(400).json(err);
@@ -33,6 +30,7 @@ function create(req, res) {
 }
 
 async function deleteItem(req, res) {
-  const item = await Item.findByIdAndDelete(req.params.id);
-  res.json(item);
+  await Item.findByIdAndDelete(req.params.id);
+  const items = await Item.find({});
+  res.json(items);
 }

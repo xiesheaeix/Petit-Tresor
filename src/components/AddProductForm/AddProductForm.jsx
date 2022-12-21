@@ -1,13 +1,19 @@
+import { useEffect } from 'react';
 import { useState } from 'react';
 
 export default function AddProductForm({addProduct, categories}) {
     const [newProduct, setNewProduct] = useState({
       name: "",
       images: [],
-      // category: {categories},
+      category: "",
       price: 0,
       description: ""
     });
+
+    useEffect(function() {
+      if (!categories.length) return;
+      setNewProduct({...newProduct, category: categories[0]});
+     }, [categories]);
    
     function handleChange (evt) {
       setNewProduct({...newProduct, [evt.target.name]: evt.target.value });
@@ -19,7 +25,7 @@ export default function AddProductForm({addProduct, categories}) {
         setNewProduct({
             name: "",
             images: [],
-            // category: {categories},
+            category: "",
             price: 0,
             description: ""
           });
@@ -45,15 +51,15 @@ export default function AddProductForm({addProduct, categories}) {
               onChange={handleChange}
               required 
           />
-        {/* <label>category</label>
+        <label>category</label>
           <select 
               name="category" 
               value={newProduct.category}
               onChange={handleChange}>
-            {categories.map ((cat, idx) => (
-              <option key={idx} value={cat}>{cat}</option>
+            {categories.map ((cat) => (
+              <option key={cat._id} value={cat._id}>{cat.name}</option>
             ))}
-          </select> */}
+          </select>
         <label>Price</label>
           <input
               name="price"
