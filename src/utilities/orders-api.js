@@ -32,8 +32,7 @@ export function getAllActiveOrders() {
     return sendRequest(`${BASE_URL}/all`);
 }
 
-export function updateOrder(itemId, orderData) {
+export function updateOrder(orderData) {
   console.log(orderData)
-  console.log(itemId)
-  return sendRequest(`${BASE_URL}/update`, 'PUT', {itemId, orderData})
+  return sendRequest(`${BASE_URL}/update`, 'PUT', orderData)
 }

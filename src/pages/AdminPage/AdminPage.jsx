@@ -25,13 +25,12 @@ export default function AdminPage({categories}) {
       }, []);
   
     async function updateOrder(orderData){
-        console.log(orderData)
+        // console.log(orderData)
         const updatedOrder = await ordersAPI.updateOrder(orderData);
         setAllOrders([...allOrders, updatedOrder]);
     }
 
     async function addProduct(productData) {
-        console.log(productData)
         const newProduct = await itemsAPI.createItem(productData);
         setAllProducts([...allProducts, newProduct]);
     }
@@ -74,7 +73,7 @@ export default function AdminPage({categories}) {
                                     </p>
                                 </div>
                             ))}
-                            <UpdateOrderForm updateOrder={updateOrder}/>
+                            {/* <UpdateOrderForm updateOrder={updateOrder}/> */}
                         </div>
                     ))}
             </div>

@@ -2,7 +2,7 @@ import {useState} from 'react';
 
 export default function UpdateOrderForm({updateOrder}) {
     const [orderData, setOrderData] = useState({
-        checkbox: false,
+        // checkbox: false,
         trackingNum: "",
     })
 
