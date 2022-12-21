@@ -3,11 +3,10 @@ img {
     height: 30vmin;
     width: 30vmin;
 }
-
-/* p {
+.detail-page p {
     padding: 0 15vmin;
 }
 
-span {
+.detail-page span {
     font-weight: 600;
-} */
+} 
