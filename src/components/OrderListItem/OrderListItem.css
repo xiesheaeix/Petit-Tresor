@@ -1,0 +1,24 @@
+.OrderListItem {
+    width: 100%;
+    margin-bottom: 3vmin;
+    padding-bottom: 3vmin;
+    color: black;
+    background-color: tan;
+    border: .2vmin solid tan;
+    border-radius: 1vmin;
+    font-size: 2vmin;
+    cursor: pointer;
+  }
+  
+  
+  .OrderListItem.selected {
+    border-color: black;
+    border-width: .2vmin;
+    cursor: default;
+  }
+  
+  .OrderListItem:not(.selected):hover {
+    border-color: black;
+    border-width: .2vmin;
+  }
+  

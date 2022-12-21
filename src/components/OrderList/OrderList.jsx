@@ -12,7 +12,9 @@ export default function OrderList({ orders, activeOrder, setActiveOrder }) {
 
   return (
     <main className={`OrderList ${orders.length ? '' : 'no-orders'}`}>
-      {orderList}
+      <div className="orders">
+        {orderList}
+      </div>
     </main>
   );
 }

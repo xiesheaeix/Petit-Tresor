@@ -19,12 +19,12 @@ export default function ProductDetailPage({ handleAddToOrder }) {
 
 
     return (
-        <div>
+        <div className="detail-page">
             <h1>{itemDetails.name}</h1>
             <p>{itemDetails.description}</p>
-            <span>${itemDetails.price}</span>
+            <span>$ {itemDetails.price}</span><br></br>
             <button className="btn-sm" onClick={() => handleAddToOrder(itemDetails._id)}>
-              ADD
+              ADD TO CART
             </button>
             <Carousel  style={{thumbHeight: '20vmin'}} >
                 {itemDetails.images?.map((url, idx) => (

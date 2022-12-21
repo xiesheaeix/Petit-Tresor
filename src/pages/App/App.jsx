@@ -20,15 +20,11 @@ export default function App() {
   const navigate = useNavigate();
 
   useEffect(function() {
-    if (user) {
-      async function getCart() {
-        const cart = await ordersAPI.getCart();
-        setCart(cart);
-      }
-      getCart();
-    } else {
-      setCart = null;
+    async function getCart() {
+      const cart = await ordersAPI.getCart();
+      setCart(cart);
     }
+    getCart();
   }, [user]);
 
   async function handleAddToOrder(itemId) {

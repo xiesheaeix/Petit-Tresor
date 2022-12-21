@@ -21,8 +21,8 @@ export default function NavBar({ setUser, showCart, setShowCart }) {
         </div>
         <div className="navbar-user">
           <ul>
-            <li><button onClick={() => setShowCart(!showCart)}><AiOutlineShoppingCart/></button></li>
-            <li><Link to="" onClick={handleLogOut}>Log Out</Link></li>
+            <li><button className="btn-md" onClick={() => setShowCart(!showCart)}><AiOutlineShoppingCart/></button></li>
+            <li className="logout"><Link to="" onClick={handleLogOut}>Log Out</Link></li>
           </ul>
         </div>
       </div>

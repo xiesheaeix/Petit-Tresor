@@ -4,7 +4,7 @@ export default function AddProductForm({addProduct, categories}) {
     const [newProduct, setNewProduct] = useState({
       name: "",
       images: [],
-      category: {categories},
+      // category: {categories},
       price: 0,
       description: ""
     });
@@ -19,7 +19,7 @@ export default function AddProductForm({addProduct, categories}) {
         setNewProduct({
             name: "",
             images: [],
-            category: {categories},
+            // category: {categories},
             price: 0,
             description: ""
           });
@@ -45,7 +45,7 @@ export default function AddProductForm({addProduct, categories}) {
               onChange={handleChange}
               required 
           />
-        <label>category</label>
+        {/* <label>category</label>
           <select 
               name="category" 
               value={newProduct.category}
@@ -53,7 +53,7 @@ export default function AddProductForm({addProduct, categories}) {
             {categories.map ((cat, idx) => (
               <option key={idx} value={cat}>{cat}</option>
             ))}
-          </select>
+          </select> */}
         <label>Price</label>
           <input
               name="price"

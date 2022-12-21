@@ -82,6 +82,16 @@ button, a.button {
 button.btn-sm {
   font-size: 1.5vmin;
   padding: .6vmin .8vmin;
+  box-shadow: 6px 4px 10px black;
+}
+
+button.btn-md {
+  font-size: 3vmin;
+  padding: .6vmin .8vmin;
+}
+
+button.btn-md:hover {
+  box-shadow: 3px 4px 12px black;
 }
 
 button.btn-xs {

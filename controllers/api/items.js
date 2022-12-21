@@ -22,9 +22,8 @@ async function show(req, res) {
 
 function create(req, res) {
   try {
-    const category = Category.find({name: req.body.category});
-    req.body.category = category;
-    console.log("$$$", category._id);
+    // const category = Category.find({name: req.body.category});
+    // req.body.category = category;
     const item = new Item(req.body);
     item.save();
     res.json(item);

@@ -42,4 +42,6 @@ nav {
     list-style: none;
 }
 
-  
+.logout a:hover {
+    color: maroon;
+}
