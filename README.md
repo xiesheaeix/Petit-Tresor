@@ -25,21 +25,25 @@
   This web app is all about expressing your feelings and sharing with others! Viewing others posts is as easy as navigating to the **post** section in the nav bar. Once there you can look around but will need to sign up with Google Oauth to leave comments or navigate to a persons specific profile. If you choose to sign up you will be able to start creating your own posts, leaving comments on other posts and even create secret posts. 🤫 Your free to express whatever is on your mind and read others expressions!
  
   
-![img](https://imgur.com/PpntiQL.jpg)
+![img](https://i.imgur.com/6XAsaoa.png)
   
-![img](https://imgur.com/L9ihUN8.jpg)
+![img](https://i.imgur.com/hG9hlir.png)
 
-![img](https://imgur.com/uHBZJBT.jpg)
+![img](https://i.imgur.com/r1td9xO.png)
+
+##Admin Page
   
-![img](https://imgur.com/cXFGeob.jpg)
+![img](https://i.imgur.com/f0LtuMd.png)
   
-![img](https://imgur.com/kbZeeqb.jpg)
+![img](https://i.imgur.com/YBrGbyo.png)
 
 </div>
 
 
 
 ### Technologies Used 🖥
+
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
 ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
 
