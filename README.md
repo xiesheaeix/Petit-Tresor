@@ -22,7 +22,12 @@
 
 ### Description 📝
 
-  This web app is all about expressing your feelings and sharing with others! Viewing others posts is as easy as navigating to the **post** section in the nav bar. Once there you can look around but will need to sign up with Google Oauth to leave comments or navigate to a persons specific profile. If you choose to sign up you will be able to start creating your own posts, leaving comments on other posts and even create secret posts. 🤫 Your free to express whatever is on your mind and read others expressions!
+Start shopping for beautiful elegant jewelry with a modern touch. Users will be navigated to a sign up page where they can start to browse the collection of products the website offers. Users can add and update the items in their cart and checkout once they've choose all of their items. On the checkout page you will be prompted to add your shipping address and your order is complete. 
+
+As an admin user you will be able to add products to the collection on the homepage as well as delete products. On the admin page it will show the admin all of the current active orders.
+
+
+
  
   
 ![img](https://i.imgur.com/6XAsaoa.png)
@@ -31,7 +36,7 @@
 
 ![img](https://i.imgur.com/r1td9xO.png)
 
-##Admin Page
+### Admin Panel
   
 ![img](https://i.imgur.com/f0LtuMd.png)
   
@@ -63,7 +68,6 @@
 
       
 ### Upcoming Features ⏩
-- Password lock on private posts
-- User profile model added with lots of new info being added to users profile data
-- Chat feature between users
-- Add API for daily quote or horoscope
+- Update Admin panel to show orders that are shipped/need to be shipped
+- Implement Stripes payment feature
+- Moblie resopnsiveness for mobile
