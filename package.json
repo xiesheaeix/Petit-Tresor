@@ -21,7 +21,6 @@
     "serve-favicon": "^2.5.0"
   },
   "scripts": {
-    "install-and-build": "npm install && npm run build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -44,6 +43,4 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "proxy": "http://localhost:3001"
 }
